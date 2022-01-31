@@ -384,7 +384,7 @@ def obtain_nodes_for_each_accession(accessions_in_input_file, infile_acc2taxid_p
 
         for curr_line in acc2taxid:
 
-            curr_accession, curr_taxid = curr_line.rstrip().split('\t')[1:3]
+            curr_accession, curr_taxid = [curr_line.rstrip().split('\t')[0]] + [curr_line.rstrip().split('\t')[2]]
 
             if curr_accession in accessions_in_input_file:
 
